@@ -1,5 +1,5 @@
 # ui-qrcode element
-qr code element
+QR code element
 
 ## Ussage
 
