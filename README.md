@@ -1,4 +1,4 @@
-# ui-qrcode element
+# u1-qrcode element
 QR code element
 
 ## Ussage
