@@ -26,7 +26,7 @@ jobs:
           # If true, package.json[description] will be synced with GitHub repository description.
           # syncDescription: # optional, default is true
           # If true, package.json[homepage] will be synced with GitHub repository homepage.
-          # syncHomepage: # optional, default is true
+          syncHomepage: true # optional, default is true
           # If true, package.json[keywords] will be synced with GitHub repository topics.
           # syncKeywords: # optional, default is true
           # The syncing direction, can be "overwrite-file" or "overwrite-github". If "overwrite-file", the file package.json will be edited in a pull request according to the GitHub repository info. If "overwrite-github", the GitHub repository info will be changed according to the content of the package.json file.
