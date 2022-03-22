@@ -1,4 +1,4 @@
-- name: Sync package.json with repo info
+name: Sync package.json with repo info
   # You may pin to the exact commit or the version.
   # uses: Jaid/action-sync-node-meta@4b6ea28dafd3ff2d18f91040ceaa876cb4a019f4
   uses: Jaid/action-sync-node-meta@v1.4.0
