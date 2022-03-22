@@ -1,22 +1,4 @@
-name: Sync package.json with repo info
+- name: GitHub Action for package.json update.
   # You may pin to the exact commit or the version.
-  # uses: Jaid/action-sync-node-meta@4b6ea28dafd3ff2d18f91040ceaa876cb4a019f4
-  uses: Jaid/action-sync-node-meta@v1.4.0
-  with:
-    # Repository token for allowing the action to make commits or change the repository info. If direction is "overwrite-file", this input be set from forwarding secrets.GITHUB_TOKEN in the workflow file. If direction is "overwrite-github", a custom personal access token with "repo" scope has to be created.
-    githubToken: 
-    # If true and direction is "overwrite-file", pull requests created by this action are automatically approved and merged.
-    approve: # optional, default is true
-    # If true and direction is "overwrite-file" and approve is also true, automatically merged pull requests will delete their branch afterwards.
-    removeBranch: # optional, default is true
-    # Prefix string used in messages for automatically generated commits
-    commitMessagePrefix: # optional, default is autofix: 
-    # If true, package.json[description] will be synced with GitHub repository description.
-    syncDescription: # optional, default is true
-    # If true, package.json[homepage] will be synced with GitHub repository homepage.
-    syncHomepage: # optional, default is true
-    # If true, package.json[keywords] will be synced with GitHub repository topics.
-    syncKeywords: # optional, default is true
-    # The syncing direction, can be "overwrite-file" or "overwrite-github". If "overwrite-file", the file package.json will be edited in a pull request according to the GitHub repository info. If "overwrite-github", the GitHub repository info will be changed according to the content of the package.json file.
-    direction: # optional, default is overwrite-file
-
+  # uses: taichi/actions-package-update@8a8152bdbafc8b77f061c02895607bf759244347
+  uses: taichi/actions-package-update@v0.5.0
