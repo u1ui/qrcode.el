@@ -11,7 +11,7 @@ QR code element
 ```
 
 ## Demo
-https://raw.githack.com/u1ui/qrcode.el/main/tests/demo.html  
+https://raw.githack.com/u1ui/qrcode.el/main/tests/test.html  
 
 ## Thanks
 https://github.com/nayuki/QR-Code-generator
