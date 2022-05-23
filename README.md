@@ -10,7 +10,8 @@ QR code element
 <u1-qrcode style="background-color: yellow; color: blue">https://github.com/u1ui/u1</u1-qrcode>
 ```
 
-## Demo
+## Demos
+https://raw.githack.com/u1ui/qrcode.el/main/tests/minimal.html  
 https://raw.githack.com/u1ui/qrcode.el/main/tests/test.html  
 
 ## Thanks
