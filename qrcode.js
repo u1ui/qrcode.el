@@ -36,12 +36,6 @@ customElements.define('u1-qrcode', class extends HTMLElement {
 
     connectedCallback() {
         this._redraw();
-        /*
-        this._ready.then(data=>{
-            console.log(11)
-            console.log(qrcodegen)
-        })
-        */
     }
 
     disconnectedCallback() {
@@ -50,17 +44,14 @@ customElements.define('u1-qrcode', class extends HTMLElement {
     async _redraw() {
         await this._ready;
 
-        //return;
-
         const container = this.shadowRoot.getElementById('container');
         const QRC = qrcodegen.QrCode;
         const text = this.textContent; // todo: trim() ? can it be harmful?
 
         container.setAttribute('aria-lable', 'QR-Code: '+text);
 
-        // Simple operation
         const qr0 = QRC.encodeText(text, QRC.Ecc.MEDIUM);
-        container.innerHTML = toSvgString(qr0, 4);  // See qrcodegen-input-demo
+        container.innerHTML = toSvgString(qr0, 4);
     }
 
 
