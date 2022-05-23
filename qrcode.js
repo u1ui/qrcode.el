@@ -21,12 +21,8 @@ customElements.define('u1-qrcode', class extends HTMLElement {
         let shadowRoot = this.attachShadow({ mode: 'open' });
         shadowRoot.innerHTML = `
         <style>
-        #container {
-            display:contents;
-        }
-        #container > * {
-            display:block;
-        }
+        #container { display:contents; }
+        #container > * { display:block; }
         svg { fill:currentColor; }
         </style>
         <div id=container></div>
@@ -38,26 +34,19 @@ customElements.define('u1-qrcode', class extends HTMLElement {
         this._redraw();
     }
 
-    disconnectedCallback() {
-    }
-
     async _redraw() {
         await this._ready;
-
         const container = this.shadowRoot.getElementById('container');
         const QRC = qrcodegen.QrCode;
         const text = this.textContent; // todo: trim() ? can it be harmful?
-
         container.setAttribute('aria-lable', 'QR-Code: '+text);
-
         const qr0 = QRC.encodeText(text, QRC.Ecc.MEDIUM);
         container.innerHTML = toSvgString(qr0, 4);
     }
 
-
 });
 
-function toSvgString(qr, lightColor, darkColor) {
+function toSvgString(qr) {
     const border = 0;
     let parts = [];
     for (let y = 0; y < qr.size; y++) {
@@ -66,10 +55,8 @@ function toSvgString(qr, lightColor, darkColor) {
                 parts.push(`M${x + border},${y + border}h1v1h-1z`);
         }
     }
-    //<svg xmlns="http://www.w3.org/2000/svg" xversion="1.1" viewBox="0 0 ${qr.size + border * 2} ${qr.size + border * 2}" stroke="none">
     return `
     <svg viewBox="0 0 ${qr.size + border * 2} ${qr.size + border * 2}">
-        <!--rect width="100%" height="100%" xfill="transparent"/-->
         <path d="${parts.join(" ")}"/>
     </svg>
     `
