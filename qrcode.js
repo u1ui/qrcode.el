@@ -39,7 +39,7 @@ customElements.define('u1-qrcode', class extends HTMLElement {
         const container = this.shadowRoot.getElementById('container');
         const QRC = qrcodegen.QrCode;
         const text = this.textContent; // todo: trim() ? can it be harmful?
-        container.setAttribute('aria-lable', 'QR-Code: '+text);
+        container.setAttribute('aria-label', 'QR-Code: '+text);
         const qr0 = QRC.encodeText(text, QRC.Ecc.MEDIUM);
         container.innerHTML = toSvgString(qr0, 4);
     }
