@@ -7,6 +7,14 @@ QR-Code element
 <u1-qrcode>Hello world</u1-qrcode>
 ```
 
+```css
+u1-qrcode {
+    color:#555;
+    max-width:10rem;
+    margin:auto;
+}
+```
+
 ## Install
 
 ```html
@@ -16,8 +24,8 @@ QR-Code element
 
 ## Demos
 
-[minimal.html](https://raw.githack.com/u1ui/qrcode.el/main/tests/minimal.html)  
-[test.html](https://raw.githack.com/u1ui/qrcode.el/main/tests/test.html)  
+[minimal.html](http://gcdn.li/u1ui/qrcode.el@main/tests/minimal.html)  
+[test.html](http://gcdn.li/u1ui/qrcode.el@main/tests/test.html)  
 
 ## About
 
