@@ -18,8 +18,8 @@ u1-qrcode {
 ## Install
 
 ```html
-<link href="https://cdn.jsdelivr.net/gh/u1ui/qrcode.el@3.0.0/qrcode.min.css" rel=stylesheet>
-<script src="https://cdn.jsdelivr.net/gh/u1ui/qrcode.el@3.0.0/qrcode.min.js" type=module>
+<link href="https://cdn.jsdelivr.net/gh/u1ui/qrcode.el@x.x.x/qrcode.min.css" rel=stylesheet>
+<script src="https://cdn.jsdelivr.net/gh/u1ui/qrcode.el@x.x.x/qrcode.min.js" type=module>
 ```
 
 ## Demos
