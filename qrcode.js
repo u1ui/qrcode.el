@@ -1,19 +1,5 @@
 
 
-let loadLibPromise = null;
-function loadLib(){
-    if (!loadLibPromise) {
-        loadLibPromise = new Promise((resolve, reject) => {
-            let script = document.createElement('script');
-            script.src = 'https://cdn.jsdelivr.net/npm/@gfortaine/qr-code-generator@1.0.6/qrcodegen.min.js';
-            document.head.append(script);
-            script.onload = () => resolve(qrcodegen);
-            script.onerror = reject;
-        });
-    }
-    return loadLibPromise;
-}
-
 customElements.define('u1-qrcode', class extends HTMLElement {
 
     constructor() {
@@ -27,7 +13,6 @@ customElements.define('u1-qrcode', class extends HTMLElement {
         </style>
         <div id=container></div>
         `;
-        this._ready = loadLib();
     }
 
     connectedCallback() {
@@ -35,12 +20,11 @@ customElements.define('u1-qrcode', class extends HTMLElement {
     }
 
     async _redraw() {
-        await this._ready;
         const container = this.shadowRoot.getElementById('container');
-        const QRC = qrcodegen.QrCode;
         const text = this.textContent; // todo: trim() ? can it be harmful?
         container.setAttribute('aria-label', 'QR-Code: '+text);
-        const qr0 = QRC.encodeText(text, QRC.Ecc.MEDIUM);
+        const {default:{QrCode}} = await import('https://cdn.jsdelivr.net/npm/nayuki-qr-code-generator@1.8.0/index.min.js');
+        const qr0 = QrCode.encodeText(text, QrCode.Ecc.MEDIUM);
         container.innerHTML = toSvgString(qr0, 4);
     }
 
